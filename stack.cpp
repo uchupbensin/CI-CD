@@ -1,3 +1,5 @@
+// Mengubah nilai stack
+s.push(100);  // Menambahkan angka 100 ke dalam stack
 #include <iostream>
 #include <stack>
 using namespace std;
