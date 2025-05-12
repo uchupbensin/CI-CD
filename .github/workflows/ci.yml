@@ -1,0 +1,24 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies (g++)
+        run: sudo apt-get install -y g++
+
+      - name: Compile Code
+        run: g++ stack.cpp -o main
+
+      - name: Run Program
+        run: ./main
